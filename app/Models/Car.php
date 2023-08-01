@@ -12,16 +12,14 @@ class Car extends Model
     use HasFactory;
 
     protected $fillable = [
-        'person_id', 'model', 'brand', 'year', 'plate', 'color'
+        'person_id', 'model', 'brand', 'year', 'plate', 'color', 'created_at', 'updated_at'
     ];
 
-    // Relacionamento: Um carro pertence a um proprietário
     public function person()
     {
         return $this->belongsTo(Person::class);
     }
 
-    // Relacionamento: Um carro pode ter várias revisões
     public function review()
     {
         return $this->hasMany(Review::class);

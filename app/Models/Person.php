@@ -10,11 +10,12 @@ class Person extends Model
 {
     use HasFactory;
 
+    protected $table = 'persons';
+
     protected $fillable = [
-        'name', 'gender', 'date_of_birth', 'address', 'email', 'telephone'
+        'name', 'gender', 'date_of_birth', 'address', 'email', 'telephone', 'created_at', 'updated_at'
     ];
 
-    // Relacionamento: Um proprietário pode ter vários carros
     public function car()
     {
         return $this->hasMany(Car::class);

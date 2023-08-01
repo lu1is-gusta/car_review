@@ -11,10 +11,9 @@ class Review extends Model
     use HasFactory;
 
     protected $fillable = [
-        'car_id', 'revision_date', 'description', 'mileage', 'value'
+        'car_id', 'revision_date', 'description', 'mileage', 'value', 'created_at', 'updated_at'
     ];
 
-    // Relacionamento: Uma revisão pertence a um carro
     public function car()
     {
         return $this->belongsTo(car::class);
